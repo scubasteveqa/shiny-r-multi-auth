@@ -96,8 +96,7 @@ ui <- page_sidebar(
     value_box("SF Total Sales", textOutput("sf_total_sales"), theme = "primary"),
     value_box("SF Orders", textOutput("sf_total_orders"), theme = "info"),
     value_box("SF Avg Order", textOutput("sf_avg_order"), theme = "success"),
-    col_widths = c(4, 4, 4),
-    height = "150px"
+    col_widths = c(4, 4, 4)
   ),
   layout_columns(
     card(card_header("Sales by Category"), plotlyOutput("sf_chart_category", height = "400px")),
@@ -111,8 +110,7 @@ ui <- page_sidebar(
     value_box("DB Revenue", textOutput("db_total_revenue"), theme = "primary"),
     value_box("DB Orders", textOutput("db_total_orders"), theme = "info"),
     value_box("DB Franchises", textOutput("db_franchise_count"), theme = "warning"),
-    col_widths = c(4, 4, 4),
-    height = "150px"
+    col_widths = c(4, 4, 4)
   ),
   layout_columns(
     card(card_header("Revenue by Franchise"), plotlyOutput("db_chart_franchise", height = "400px")),
