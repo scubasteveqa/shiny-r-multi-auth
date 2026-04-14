@@ -30,18 +30,19 @@ fetch_snowflake <- function(access_token) {
 }
 
 fetch_databricks <- function(access_token) {
-  old_token <- Sys.getenv("DATABRICKS_TOKEN")
-  Sys.setenv(DATABRICKS_TOKEN = access_token)
-  on.exit({
-    if (nchar(old_token) > 0) Sys.setenv(DATABRICKS_TOKEN = old_token)
-    else Sys.unsetenv("DATABRICKS_TOKEN")
-  })
-
   conn <- dbConnect(
-    odbc::databricks(),
-    httpPath = Sys.getenv("DATABRICKS_HTTP_PATH")
+    odbc::odbc(),
+    driver = "Databricks",
+    Host = Sys.getenv("DATABRICKS_HOST"),
+    Port = 443,
+    HTTPPath = Sys.getenv("DATABRICKS_HTTP_PATH"),
+    SSL = 1,
+    ThriftTransport = 2,
+    AuthMech = 11,
+    Auth_Flow = 0,
+    Auth_AccessToken = access_token
   )
-  on.exit(dbDisconnect(conn), add = TRUE)
+  on.exit(dbDisconnect(conn))
 
   df <- dbGetQuery(conn, "
     SELECT
