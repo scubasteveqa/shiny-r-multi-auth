@@ -69,6 +69,7 @@ fetch_databricks <- function(access_token) {
 
 ui <- page_sidebar(
   title = "Multi-Source Analytics",
+  fillable = FALSE,
   sidebar = sidebar(
     width = 260,
     h3("Multi-Source Dashboard"),
