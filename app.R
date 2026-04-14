@@ -93,28 +93,28 @@ ui <- page_sidebar(
   # Snowflake section
   h4("Snowflake - Sales", style = "margin-top: 0.5rem;"),
   layout_columns(
-    value_box("SF Total Sales", textOutput("sf_total_sales"), theme = "primary", height = "300px"),
-    value_box("SF Orders", textOutput("sf_total_orders"), theme = "info", height = "300px"),
-    value_box("SF Avg Order", textOutput("sf_avg_order"), theme = "success", height = "300px"),
+    value_box("SF Total Sales", textOutput("sf_total_sales"), theme = "primary", height = "400px"),
+    value_box("SF Orders", textOutput("sf_total_orders"), theme = "info", height = "400px"),
+    value_box("SF Avg Order", textOutput("sf_avg_order"), theme = "success", height = "400px"),
     col_widths = c(4, 4, 4)
   ),
   layout_columns(
-    card(card_header("Sales by Category"), plotlyOutput("sf_chart_category", height = "600px")),
-    card(card_header("Sales by Region"), plotlyOutput("sf_chart_region", height = "600px")),
+    card(card_header("Sales by Category"), plotlyOutput("sf_chart_category", height = "800px")),
+    card(card_header("Sales by Region"), plotlyOutput("sf_chart_region", height = "800px")),
     col_widths = c(6, 6)
   ),
 
   # Databricks section
   h4("Databricks - Bakehouse", style = "margin-top: 1.5rem;"),
   layout_columns(
-    value_box("DB Revenue", textOutput("db_total_revenue"), theme = "primary", height = "300px"),
-    value_box("DB Orders", textOutput("db_total_orders"), theme = "info", height = "300px"),
-    value_box("DB Franchises", textOutput("db_franchise_count"), theme = "warning", height = "300px"),
+    value_box("DB Revenue", textOutput("db_total_revenue"), theme = "primary", height = "400px"),
+    value_box("DB Orders", textOutput("db_total_orders"), theme = "info", height = "400px"),
+    value_box("DB Franchises", textOutput("db_franchise_count"), theme = "warning", height = "400px"),
     col_widths = c(4, 4, 4)
   ),
   layout_columns(
-    card(card_header("Revenue by Franchise"), plotlyOutput("db_chart_franchise", height = "600px")),
-    card(card_header("Revenue by Continent"), plotlyOutput("db_chart_continent", height = "600px")),
+    card(card_header("Revenue by Franchise"), plotlyOutput("db_chart_franchise", height = "800px")),
+    card(card_header("Revenue by Continent"), plotlyOutput("db_chart_continent", height = "800px")),
     col_widths = c(6, 6)
   ),
 
