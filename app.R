@@ -99,8 +99,8 @@ ui <- page_sidebar(
     col_widths = c(4, 4, 4)
   ),
   layout_columns(
-    card(card_header("Sales by Category"), plotlyOutput("sf_chart_category", height = "800px")),
-    card(card_header("Sales by Region"), plotlyOutput("sf_chart_region", height = "800px")),
+    card(card_header("Sales by Category"), plotlyOutput("sf_chart_category", height = "1000px")),
+    card(card_header("Sales by Region"), plotlyOutput("sf_chart_region", height = "1000px")),
     col_widths = c(6, 6)
   ),
 
@@ -113,14 +113,14 @@ ui <- page_sidebar(
     col_widths = c(4, 4, 4)
   ),
   layout_columns(
-    card(card_header("Revenue by Franchise"), plotlyOutput("db_chart_franchise", height = "800px")),
-    card(card_header("Revenue by Continent"), plotlyOutput("db_chart_continent", height = "800px")),
+    card(card_header("Revenue by Franchise"), plotlyOutput("db_chart_franchise", height = "1000px")),
+    card(card_header("Revenue by Continent"), plotlyOutput("db_chart_continent", height = "1000px")),
     col_widths = c(6, 6)
   ),
 
   # Combined trend
   layout_columns(
-    card(card_header("Monthly Trends - Both Sources"), plotlyOutput("combined_trend", height = "600px")),
+    card(card_header("Monthly Trends - Both Sources"), plotlyOutput("combined_trend", height = "1600px")),
     col_widths = 12
   )
 )
